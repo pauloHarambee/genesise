@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Transaction Statement";
+}
+@model IEnumerable<Transactions>
+<div class="row flex-grow">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card card-rounded">
+            <div class="card-body">
+                <div class="d-sm-flex justify-content-between align-items-start">
+                    <div>
+                        <h4 class="card-title card-title-dash text-success"><i class="fa fa-check-circle-o"></i>Payment Success</h4>
+                        <p class="card-subtitle card-subtitle-dash">You have successfully made a payment with the following details:</p>
+                    </div>
+                </div>
+                <div class="table-responsive  mt-1">
+                    <table class="table select-table">
+                        <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Account Number</th>
+                                <th>Bank</th>
+                                <th>Sender</th>
+                                <th>Sender Number</th>
+                                <th>Amount (Birr)</th>
+                                <th>Amount (ZAR) </th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model){
+                            <tr>
+                                <td>
+                                    @item.Beneficiaries.FullName
+                                </td>
+                                <td>
+                                    @item.Beneficiaries.AccountNumber
+                                </td>
+                                    <td>
+                                        @item.Beneficiaries.Bank.Name
+                                    </td>
+                                    <td>
+                                        @item.Beneficiaries.Sender
+                                    </td>
+                                    <td>
+                                        @item.Beneficiaries.SenderNumber
+                                    </td>
+                                    <td>
+                                        @item.Amount
+                                    </td>
+                                    <td>
+                                        @item.AmountZAR
+                                    </td>
+                                    <td>
+                                        @item.TransactionDate.ToLocalTime()
+                                    </td>
+                                <td>
+                                        @if (item.Status == "Pending"){
+                                            <div class="badge badge-opacity-warning">
+                                                @item.Status
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="badge badge-opacity-success">
+                                                @item.Status
+                                            </div>
+                                        }
+                                    </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

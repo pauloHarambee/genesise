@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenesisExchange", "GenesisExchange\GenesisExchange.csproj", "{E9132A98-85B6-4D17-93A8-084EEBF54FC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9132A98-85B6-4D17-93A8-084EEBF54FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9132A98-85B6-4D17-93A8-084EEBF54FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9132A98-85B6-4D17-93A8-084EEBF54FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9132A98-85B6-4D17-93A8-084EEBF54FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {248D2506-202E-4512-A551-D3BB9D48CE4E}
+	EndGlobalSection
+EndGlobal

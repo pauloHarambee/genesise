@@ -1,0 +1,64 @@
+﻿
+@model IEnumerable<Beneficiaries>
+@{
+    ViewData["Title"] = "Beneficiaries";
+}
+
+<div class="row flex-grow">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card card-rounded">
+            <div class="card-body">
+                <div class="d-sm-flex justify-content-between align-items-start">
+                    <div>
+                        <h4 class="card-title card-title-dash">Beneficiaries</h4>
+                    </div>
+                    <div>
+                        <a class="btn btn-primary btn-lg text-white mb-0 me-0" asp-action="AddBeneficiary"><i class="mdi mdi-account-plus"></i>Add new beneficiary</a>
+                    </div>
+                </div>
+                <div class="table-responsive  mt-1">
+                    @if (!Model.Any())
+                    {
+                        <h3>No Active Beneficiaries</h3>
+                    }else{
+                    <table class="table select-table">
+                        <thead>
+                            <tr>
+                                <th>Beneficiary</th>
+                                <th>Sender</th>
+                                <th>Bank</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="d-flex ">
+                                            <div>
+                                                <h6>@item.FullName</h6>
+                                                <p>@item.AccountNumber</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h6>@item.Sender</h6>
+                                        <p>@item.SenderNumber</p>
+                                    </td>
+                                    <td>
+                                        <h6>@item.Bank.Name</h6>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-sm btn-primary" asp-action="PaymentPortal" asp-route-beneficiaryId="@item.Id">Pay Now</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
